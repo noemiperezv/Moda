@@ -1,5 +1,5 @@
 module.exports = {
-    'url': 'mongodb://localhost/AWOS'
+    'url': 'mongodb+srv://noemi:linux@cluster0.wdylp.mongodb.net/AWOS?retryWrites=true&w=majority'
 };
 
 
