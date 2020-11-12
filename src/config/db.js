@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
  
 // Copia la URL del sitio de mongo DB
-const MONGOURI = "mongodb://localhost/AWOS";
+const MONGOURI = "mongodb+srv://noemi:linux@cluster0.wdylp.mongodb.net/AWOS?retryWrites=true&w=majority"
  
 const InitiateMongoServer = async() => {
     try {
