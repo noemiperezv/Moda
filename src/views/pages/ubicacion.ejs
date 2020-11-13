@@ -1,42 +1,41 @@
 <!DOCTYPE html>
-
 <html>
-  <head>
-    <title>Add Map</title>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDa9mXPgmEQT9Dvoj5rzMR-OGulujNBk7M&callback=initMap&libraries=&v=weekly"
-      defer
-    ></script>
-    <style type="text/css">
-      /* Set the size of the div element that contains the map */
-      #map {
-        height: 400px;
-        /* The height is 400 pixels */
-        width: 100%;
-        /* The width is the width of the web page */
+<head> 
+    <meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0">
+    <title>Maps JavaScript API</title>
+	<style> 
+  	  #map {
+        height: 100%;
       }
-    </style>
-    <script>
-      // Initialize and add the map
-      function initMap() {
-        // The location of Uluru
-        const uluru = { lat: -25.344, lng: 131.036 };
-        // The map, centered at Uluru
-        const map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 4,
-          center: uluru,
+     
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+	</style> 
+</head>  
+	<body>
+		<div id ="map"> </div> 
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDa9mXPgmEQT9Dvoj5rzMR-OGulujNBk7M&callback=initMap" async defer></script>
+	<script>
+		
+      var map;
+  	 function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+		  center: {lat: 43.5293, lng: -5.6773},
+          zoom: 13,
         });
-        // The marker, positioned at Uluru
-        const marker = new google.maps.Marker({
-          position: uluru,
+        var marker = new google.maps.Marker({
+          position: {lat: 43.542194, lng: -5.676875},
           map: map,
+	  title: 'Acuario de Gijón'
         });
       }
-    </script>
-  </head>
-  <body>
-    <h3>My Google Maps Demo</h3>
-    <!--The div element for the map -->
-    <div id="map"></div>
-  </body>
+ 
+      
+	</script>
+ 
+	</body> 
 </html>
