@@ -1,35 +1,17 @@
 <!DOCTYPE html>
-<html lang="es">
-
-<head>
-  <%- include('../partials/head'); %>
-  <script type="text/javascript">
-    window.onload = function () {
-      L.mapquest.key = 'rL978S93Q5jml5AWeG0jWFgvccit6k0A';
-
-      var map = L.mapquest.map('map', {
-        center: [21.1574, -100.934618],
-        layers: L.mapquest.tileLayer('map'),
-        zoom: 12
-      });
-
-      map.addControl(L.mapquest.control());
-    }
-  </script>
-</head>
-
-<body>
-  <%- include('../partials/navbar'); %>
-
-  <div id="contenido">
-
-    <div id="map" style="width: 100%; height: 530px;"></div>
-
-  </div>
-  <%- include('../partials/script'); %>
-
-
-</body>
-<%- include('../partials/footer'); %>
-
+<html>
+  <head>
+    <title>Add Map</title>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDa9mXPgmEQT9Dvoj5rzMR-OGulujNBk7M&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+  </body>
 </html>
