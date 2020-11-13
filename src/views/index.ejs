@@ -2,30 +2,8 @@
 <html lang="es">
   <head>
     <%- include('partials/head'); %>
-    <script type="text/javascript">
-      window.onload = function () {
-        L.mapquest.key = 'rL978S93Q5jml5AWeG0jWFgvccit6k0A';
-  
-        var map = L.mapquest.map('map', {
-          center: [21.1574, -100.934618],
-          layers: L.mapquest.tileLayer('map'),
-          zoom: 12
-        });
-  
-        map.addControl(L.mapquest.control());
-      }
-    </script>
   </head>
   <body>
-    <%- include('partials/navbar'); %>
-    <h1>Index</h1>
-    <div class="jumbotron">
-      <h1 class="display-4">Bienvenido a Node JS & Express</h1>
-      <p class="lead">Este es un ejempo básico</p>
-      <hr class="my-4">
-      <p>Mi primer sitio básico con Express.</p>
-      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-    </div>
     <div class="container">
       <div class="card text-center mt-5">
         <div class="card-body">

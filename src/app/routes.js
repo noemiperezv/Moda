@@ -12,8 +12,20 @@ module.exports = (app, passport) => {
 		});
 	});
 
+	app.get('/home', (req, res) => {
+		res.render('pages/home.ejs', {
+			message: req.flash('loginMessage')
+		});
+	});
+
 	app.get('/ubicacion', (req, res) => {
 		res.render('pages/ubicacion.ejs', {
+			message: req.flash('loginMessage')
+		});
+	});
+
+	app.get('/videos', (req, res) => {
+		res.render('pages/videos.ejs', {
 			message: req.flash('loginMessage')
 		});
 	});
@@ -39,7 +51,7 @@ module.exports = (app, passport) => {
 
 	//profile view
 	app.get('/profile', isLoggedIn, (req, res) => {
-		res.render('profile', {
+		res.render('pages/profile', {
 			user: req.user
 		});
 	});
