@@ -2,33 +2,10 @@
 <html lang="es">
   <head>
     <%- include('partials/head'); %>
-    <script type="text/javascript">
-      window.onload = function () {
-        L.mapquest.key = 'rL978S93Q5jml5AWeG0jWFgvccit6k0A';
-  
-        var map = L.mapquest.map('map', {
-          center: [21.1574, -100.934618],
-          layers: L.mapquest.tileLayer('map'),
-          zoom: 12
-        });
-  
-        map.addControl(L.mapquest.control());
-      }
-    </script>
   </head>
   <body>
-    <%- include('partials/navbar'); %>
-    <h1>Index</h1>
-    <div class="jumbotron">
-      <h1 class="display-4">Bienvenido a Node JS & Express</h1>
-      <h2>Holiwii</h2>
-      <p class="lead">Este es un ejempo básico</p>
-      <hr class="my-4">
-      <p>Mi primer sitio básico con Express.</p>
-      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-    </div>
     <div class="container">
-      <div class="card text-center mt-5">
+      <div class="card text-center mt-5" width="600px">
         <div class="card-body">
           <h1><span class="fa fa-lock"></span>Login or Register</h1>
           <a href="/login" class="btn btn-light btn-lg">
@@ -37,9 +14,44 @@
           <a href="/signup" class="btn btn-light btn-lg">
             <span class="fa fa-user"></span>local Signup
           </a>
+          <h3>O conectate con facebook</h3>
+          <div>
+            
+              <fb:login-button 
+                scope="public_profile,email"
+                onlogin="checkLoginState();">
+              </fb:login-button>
+          </div>
         </div>
       </div>
     </div>
+    <script>
+      var finished_rendering = function() {
+        console.log("finished rendering plugins");
+        var spinner = document.getElementById("spinner");
+        spinner.removeAttribute("style");
+        spinner.removeChild(spinner.childNodes[0]);
+      }
+      FB.Event.subscribe('xfbml.render', finished_rendering);
+      </script>
+      <div id="spinner"
+          style="
+              background: #4267b2;
+              border-radius: 5px;
+              color: white;
+              height: 40px;
+              text-align: center;
+              width: 250px;">
+          Loading
+          <div
+          class="fb-login-button"
+          data-max-rows="1"
+          data-size="large"
+          data-button-type="continue_with"
+          data-use-continue-as="true"
+          ></div>
+      </div>
+      
     <%- include('partials/script'); %>
     <%- include('partials/footer'); %>
     
