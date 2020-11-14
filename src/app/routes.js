@@ -15,6 +15,9 @@ module.exports = (app, passport) => {
 	app.get('/home', (req, res) => {
 		res.render('pages/home.ejs');
 	});
+	app.get('/acercade', (req, res) => {
+		res.render('pages/acercade.ejs');
+	});
 
 	app.get('/ubicacion', (req, res) => {
 		res.render('pages/ubicacion.ejs', {
