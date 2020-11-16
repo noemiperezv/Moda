@@ -5,52 +5,55 @@
   </head>
   <body>
     <%- include('../partials/navbar'); %>
-    <div class="container text-center">
-      <h1>Tips</h1>
-      <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-          <div id="player"></div>
-  
-          <script>
-              var tag = document.createElement('script');
-      
-              tag.src = "https://www.youtube.com/iframe_api";
-              var firstScriptTag = document.getElementsByTagName('script')[0];
-              firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-      
-              function onYouTubeIframeAPIReady() {
-              player = new YT.Player('player', {
-                  height: '420',
-                  align: "center",
-                  width: '780',
-                  videoId: 'Qm-mqsF-pg0',
-                  events: {
-                  'onReady': onPlayerReady,
-                  'onStateChange': onPlayerStateChange
-                  }
-              });
-              }
-      
-              function onPlayerReady(event) {
-              event.target.playVideo();
-              }
-      
-              function onPlayerStateChange(event) {
-              if (event.data == YT.PlayerState.PLAYING && !done) {
-                  setTimeout(stopVideo, 6000);
-                  done = true;
-              }
-              }
-              function stopVideo() {
-              player.stopVideo();
-              }
-          </script>
-          <iframe frameborder="0" width="780" height="420" 
-          src="https://www.dailymotion.com/embed/video/x4i3rac" 
-          allowfullscreen 
-          allow="autoplay; fullscreen">
-      </iframe>
-      <div id="player"></div>
+    <div class="Fondo4">
+      <div class="container text-center">
+        <h1 id="MiTitulo">Tips</h1>
+        <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+            <div id="player"></div>
+    
+            <script>
+                var tag = document.createElement('script');
+        
+                tag.src = "https://www.youtube.com/iframe_api";
+                var firstScriptTag = document.getElementsByTagName('script')[0];
+                firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        
+                function onYouTubeIframeAPIReady() {
+                player = new YT.Player('player', {
+                    height: '420',
+                    align: "center",
+                    width: '780',
+                    videoId: 'Qm-mqsF-pg0',
+                    events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                    }
+                });
+                }
+        
+                function onPlayerReady(event) {
+                event.target.playVideo();
+                }
+        
+                function onPlayerStateChange(event) {
+                if (event.data == YT.PlayerState.PLAYING && !done) {
+                    setTimeout(stopVideo, 6000);
+                    done = true;
+                }
+                }
+                function stopVideo() {
+                player.stopVideo();
+                }
+            </script>
+            <iframe frameborder="0" width="780" height="420" 
+            src="https://www.dailymotion.com/embed/video/x4i3rac" 
+            allowfullscreen 
+            allow="autoplay; fullscreen">
+        </iframe>
+        <div id="player"></div>
+      </div>
     </div>
+    
    
         
     <%- include('../partials/script'); %>

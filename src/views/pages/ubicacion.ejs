@@ -14,12 +14,15 @@
 </head>  
 	<body>
     <%- include('../partials/navbar'); %>
-    <div class="container text-center">
-      <h1>Tiendas</h1>
-      <input type="text" id="autocomplete" class="form-control">
-		
+    <div class="Fondo">
+      <div class="container text-center">
+        <h1 id="MiTitulo">Tiendas</h1>
+        <input type="text" id="autocomplete" class="form-control">
+        <div id ="map"> </div>
+      </div>
+      
     </div>
-    <div id ="map"> </div>
+    
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDa9mXPgmEQT9Dvoj5rzMR-OGulujNBk7M&libraries=places" ></script>
   <script>
     class Localizacion{
