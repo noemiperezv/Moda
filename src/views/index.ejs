@@ -4,6 +4,7 @@
     <%- include('partials/head'); %>
   </head>
   <body>
+    
     <div class="mydiv">
       <div class="container">
         <div class="card text-center mt-5" width="600px">
@@ -17,7 +18,37 @@
             </a>
             <h3>O conectate con facebook</h3>
             <div>
-              
+              <script>
+                window.fbAsyncInit = function () {
+                    FB.init({
+                        appId: '845651289539583',
+                        cookie: true,
+                        xfbml: true,
+                        version: 'v9.0'
+                    });
+        
+                    FB.AppEvents.logPageView();
+        
+                };
+        
+                (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) { return; }
+                    js = d.createElement(s); js.id = id;
+                    js.src = "https://connect.facebook.net/en_US/sdk.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+                function onLogin() {
+                    FB.login((response) => {
+                        if (response.authResponse) {
+                            FB.api('/me?fields=email,name,picture', (response) => {
+                                console.log(response)
+                            })
+                        }
+                    })
+                }
+            </script>
+            <button onclick="onLogin();">Iniciar sesion con facebook</button>
                 <fb:login-button 
                   scope="public_profile,email"
                   onlogin="checkLoginState();">

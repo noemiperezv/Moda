@@ -1,3 +1,8 @@
+/*
+Nombre del autor: Noemí Pérez Vega
+Objetivo de archivo: Proporcionar estilos acada uno de los componentes del proyecto
+Fecha y hora: domingo, ‎4‎ de ‎octubre‎ de ‎2020, ‏‎10:54:35 p. m.
+*/
 a {
   color: #00B7FF;
 }
@@ -98,4 +103,13 @@ li.right{
   padding-right: 0px;
   margin-right: 0;
   align-items: right;
+}
+#map {
+  height: 100%;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
