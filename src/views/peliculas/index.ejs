@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <%- include('../partials/head'); %>
+
+  <style>
+    footer {
+      margin-top: 30%;
+    }
+  </style>
+</head>
+
+<body class="Fondo5">
+  <%- include('../partials/navbar'); %>
+  <div class="Fondo5">
+    <div class="container">
+        <h1 id="MiTitulo" class="text-center">Películas</h1>
+        <div class="card">
+          <div class="card-header">
+            <ul class="nav nav-pills w-100">
+              <li class="nav-pill active">
+                <a class="nav-link">Películas registradas</a>
+              </li>
+              <li class="nav-pill ml-auto">
+                <a class="nav-link active" href="/peliculas/add">Agregar</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <table id="tablaPeliculas" class="display" style="width:100%">
+          <thead>
+            <tr>
+              <th id="tit">Id</th>
+              <th id="tit">Título</th>
+              <th id="tit">Director</th>
+              <th id="tit">Actor</th>
+              <th id="tit">Año</th>
+              <th id="tit">Categoría</th>
+              <th id="tit"></th>
+              <th id="tit"></th>
+              <th id="tit">&nbsp;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if(data.length > 0){ %>
+            <% for ( var i = 0; i < data.length ; i++){ %>
+            <tr>
+              <td id="dif">
+                <%= data[i].Id_Pelicula %>
+              </td>
+              <td id="dif">
+                <%= data[i].Titulo %>
+              </td>
+              <td id="dif">
+                <%= data[i].Nombre_Director %>
+              </td>
+              <td id="dif">
+                <%= data[i].Nombre_Actor %>
+              </td>
+              <td id="dif">
+                <%= data[i].Año %>
+              </td>
+              <td id="dif">
+                <%= data[i].Categoria %>
+              </td>
+              <td id="dif">
+                <a href="/peliculas/update/<%=data[i].Id_Pelicula%>" id="edit" > <i class="fa fa-pencil" aria-hidden="true"></i></a>
+              </td>
+              <td id="dif">
+                <a onclick="return alert('¿Estas seguro?')"
+                  href="../peliculas/delete/<%=data[i].Id_Pelicula%>" id="delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+              </td>
+              <td id="dif">&nbsp;</td>
+            </tr>
+            <% } %>
+            <% } %>
+    
+          </tbody>
+        </table>
+      </div>
+  </div>
+
+  <%- include('../partials/script'); %>
+  <%- include('../partials/footer'); %>
+</body>
+
+</html>

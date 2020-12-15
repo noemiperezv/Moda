@@ -131,6 +131,8 @@ html, body {
 }
 .Fondo5{
   background-color: turquoise;
+  margin: 0%;
+  padding-bottom: 0%;
 }
 #textos{
   font-family: 'Philosopher', sans-serif;
@@ -140,4 +142,27 @@ html, body {
 }
 #boton{
   color: pink;
+}
+#edit{
+  color: #2ab80d;
+}
+#delete{
+  color: red;
+}
+#dif{
+  font-family: 'Fredoka One', cursive;
+  font-size: 16px;
+  color: salmon;
+}
+#tit{
+  font-family: 'Satisfy', cursive;
+  font-size: 36px;
+  background-color: dodgerblue;
+  text-align: center;
+}
+#tablaDirectores{
+  background-color: gold;
+}
+.container{
+  padding-top: 30px;
 }
