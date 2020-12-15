@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <%- include('../partials/head'); %>
+  <style>
+    footer {
+      margin-top: 30%;
+    }
+  </style>
+</head>
+
+<body class="Fondo2">
+  <%- include('../partials/navbar'); %>
+  <div class="container">
+    <h1 id="MiTitulo"  class="text-center">Directores </h1>
+    <div class="card">
+      <div class="card-header">
+        <ul class="nav nav-pills w-100">
+          <li class="nav-pill active">
+            <a class="nav-link">Directores registrados</a>
+          </li>
+          <li class="nav-pill ml-auto">
+            <a class="nav-link active" href="/directores/add">Agregar</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <table id="tablaDirectores" class="display" style="width:100%">
+      <thead>
+        <tr>
+          <th id="tit">Id</th>
+          <th id="tit">Nombre</th>
+          <th id="tit">Apellidos</th>
+          <th id="tit">Nacionalidad</th>
+          <th id="tit">Premios</th>
+          <th id="tit"></th>
+          <th id="tit"></th>
+          <th id="tit">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if(data.length > 0){ %>
+        <% for ( var i = 0; i < data.length ; i++){ %>
+        <tr>
+          <td id="dif">
+            <%= data[i].Id_Director %>
+          </td>
+          <td id="dif">
+            <%= data[i].Nombre %>
+          </td>
+          <td id="dif">
+            <%= data[i].Apellidos %>
+          </td>
+          <td id="dif">
+            <%= data[i].Nacionalidad %>
+          </td>
+          <td id="dif">
+            <%= data[i].Premios %>
+          </td>
+          <td id="dif">
+            <a id="edit" href="/directores/update/<%=data[i].Id_Director%>"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+          </td>
+          <td id="dif">
+            <a id="delete" onclick="return alert('¿Estas seguro?')"
+              href="../directores/delete/<%=data[i].Id_Director%>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+          </td>
+          <td id="dif">&nbsp;</td>
+        </tr>
+        <% } %>
+        <% } %>
+
+      </tbody>
+    </table>
+  </div>
+
+  <%- include('../partials/script'); %>
+  <%- include('../partials/footer'); %>
+</body>
+
+</html>

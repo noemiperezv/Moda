@@ -1,5 +1,15 @@
 module.exports = (app, passport) => {
 
+	var estudiantesRouter = require('../routes/estudiantes');
+	var directoresRouter = require('../routes/directores');
+	var actoresRouter = require('../routes/actores');
+	var peliculasRouter = require('../routes/peliculas');
+
+
+	app.use('/estudiantes', estudiantesRouter);
+	app.use('/directores', directoresRouter);
+	app.use('/actores', actoresRouter);
+	app.use('/peliculas', peliculasRouter);
 	// index routes
 	app.get('/', (req, res) => {
 		res.render('index');
@@ -13,9 +23,10 @@ module.exports = (app, passport) => {
 	});
 
 	app.get('/home', (req, res) => {
-		res.render('pages/home.ejs', {
-			message: req.flash('loginMessage')
-		});
+		res.render('pages/home.ejs');
+	});
+	app.get('/acercade', (req, res) => {
+		res.render('pages/acercade.ejs');
 	});
 
 	app.get('/ubicacion', (req, res) => {
@@ -30,8 +41,26 @@ module.exports = (app, passport) => {
 		});
 	});
 
+	app.get('/comercio', (req, res) => {
+		res.render('pages/comercio.ejs', {
+			message: req.flash('loginMessage')
+		});
+	});
+
+	app.get('/redsocial', (req, res) => {
+		res.render('pages/redsocial.ejs', {
+			message: req.flash('loginMessage')
+		});
+	});
+	
+	/*app.get('/estudiantes', (req, res) => {
+		res.render('estudiantes/index.ejs', {
+			message: req.flash('loginMessage')
+		});
+	});*/
+
 	app.post('/login', passport.authenticate('local-login', {
-		successRedirect: '/profile',
+		successRedirect: '/home',
 		failureRedirect: '/login',
 		failureFlash: true
 	}));
@@ -48,7 +77,8 @@ module.exports = (app, passport) => {
 		failureRedirect: '/signup',
 		failureFlash: true // allow flash messages
 	}));
-
+	
+	
 	//profile view
 	app.get('/profile', isLoggedIn, (req, res) => {
 		res.render('pages/profile', {

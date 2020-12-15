@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <%- include('../partials/head'); %>
+  <style>
+    footer {
+      margin-top: 30%;
+    }
+  </style>
+</head>
+
+<body>
+  <%- include('../partials/navbar'); %>
+  <div class="container">
+    <h1>Listado estudiantes</h1>
+    <p>Welcome to Listado estudiantes</p>
+    <div class="card">
+      <div class="card-header">
+        <ul class="nav nav-pills w-100">
+          <li class="nav-pill active">
+            <a class="nav-link">Listado de estudiantes</a>
+          </li>
+          <li class="nav-pill ml-auto">
+            <a class="nav-link active" href="/estudiantes/add">Agregar</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <table id="tablaEstudiantes" class="display" style="width:100%">
+      <thead>
+        <tr>
+          <th>Número de Control</th>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Edad</th>
+          <th>Email</th>
+          <th></th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if(data.length > 0){ %>
+        <% for ( var i = 0; i < data.length ; i++){ %>
+        <tr>
+          <td>
+            <%= data[i].NumeroControl %>
+          </td>
+          <td>
+            <%= data[i].Nombre %>
+          </td>
+          <td>
+            <%= data[i].Apellidos %>
+          </td>
+          <td>
+            <%= data[i].Edad %>
+          </td>
+          <td>
+            <%= data[i].Email %>
+          </td>
+          <td>
+            <a class="btn btn-success edit" href="/estudiantes/update/<%=data[i].NumeroControl%>">Editar</i></a>
+            <a class="btn btn-danger delete" onclick="return alert('¿Estas seguro?')"
+              href="../estudiantes/delete/<%=data[i].NumeroControl%>">Eliminar</a>
+          </td>
+          <td>&nbsp;</td>
+        </tr>
+        <% } %>
+        <% } %>
+
+      </tbody>
+    </table>
+  </div>
+
+  <%- include('../partials/script'); %>
+  <%- include('../partials/footer'); %>
+</body>
+
+</html>

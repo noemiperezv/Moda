@@ -7,12 +7,13 @@
 </head>
 
 <body>
+  <div class="mydiv">
     <div class="container">
       <div class="col-sm-6 mx-auto">
         <div class="card mt-5">
           <div class="card-body">
             <h1 class="text-center">
-              <span class="fa fa-sign-in"></span>Login
+              <span class="fa fa-sign-in"></span>Iniciar Sesión
             </h1>
             <% if (message.length >0){ %>
               <div class="alert alert-danger">
@@ -32,13 +33,15 @@
             </form>
             <hr>
             <div class="text-center">
-              <p>Need a count? <a href="/signup">signup</a> </p>
-              <p>Or go <a href="/">Home</a>. </p>
+              <p>¿Aún no tienes cuenta?<a href="/signup">Regístrate</a> </p>
+              <p>Volver a <a href="/">Inicio</a>. </p>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+    
   <%- include('partials/script'); %>
 </body>
 <%- include('partials/footer'); %>

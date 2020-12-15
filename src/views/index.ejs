@@ -4,19 +4,62 @@
     <%- include('partials/head'); %>
   </head>
   <body>
-    <div class="container">
-      <div class="card text-center mt-5">
-        <div class="card-body">
-          <h1><span class="fa fa-lock"></span>Login or Register</h1>
-          <a href="/login" class="btn btn-light btn-lg">
-            <span class="fa fa-user"></span> local login
-          </a>
-          <a href="/signup" class="btn btn-light btn-lg">
-            <span class="fa fa-user"></span>local Signup
-          </a>
+    
+    <div class="mydiv">
+      <div class="container">
+        <div class="card text-center mt-5" width="600px">
+          <div class="card-body">
+            <h1><span class="fa fa-lock"></span>Inicia sesión o Regístrate</h1>
+            <a href="/login" class="btn btn-light btn-lg">
+              <span class="fa fa-user"></span> Iniciar sesión
+            </a>
+            <a href="/signup" class="btn btn-light btn-lg">
+              <span class="fa fa-user"></span>Regístrate
+            </a>
+            <h3>O conectate con facebook</h3>
+            <div>
+              <script>
+                window.fbAsyncInit = function () {
+                    FB.init({
+                        appId: '845651289539583',
+                        cookie: true,
+                        xfbml: true,
+                        version: 'v9.0'
+                    });
+        
+                    FB.AppEvents.logPageView();
+        
+                };
+        
+                (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) { return; }
+                    js = d.createElement(s); js.id = id;
+                    js.src = "https://connect.facebook.net/en_US/sdk.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+                function onLogin() {
+                    FB.login((response) => {
+                        if (response.authResponse) {
+                            FB.api('/me?fields=email,name,picture', (response) => {
+                                console.log(response)
+                            })
+                        }
+                    })
+                }
+            </script>
+            
+                <fb:login-button 
+                  scope="public_profile,email"
+                  onlogin="checkLoginState();">
+                </fb:login-button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    
+      
     <%- include('partials/script'); %>
     <%- include('partials/footer'); %>
     

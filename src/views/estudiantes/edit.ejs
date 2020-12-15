@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head'); %>
+    <style>
+        footer {
+            margin-top: 30%;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include('../partials/navbar'); %>
+    <% if (mensaje) { %>
+    <div class="alert alert-danger" role="alert">
+        <%- mensaje %>
+    </div>
+    <% } %>
+    <div class="card">
+        <div class="card-header">
+            Modificando Estudiante
+        </div>
+        <div class="card-body">
+            <form action="/estudiantes/update" method="post">
+                <div class="form-group">
+                    <label>Número control:</label>
+                    <input type="text" class="form-control" name="NumeroControl" value="<%= NumeroControl %>"
+                        autocomplete="off" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Nombre:</label>
+                    <input type="text" class="form-control" name="Nombre" value="<%= Nombre %>" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Apellidos:</label>
+                    <input type="text" class="form-control" name="Apellidos" value="<%= Apellidos %>"
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label>Edad:</label>
+                    <input type="text" class="form-control" name="Edad" value="<%= Edad %>" autocomplete="off" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="text" class="form-control" name="Email" value="<%= Email %>" autocomplete="off"
+                        readonly>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-info" value="Modificar" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <%- include('../partials/script'); %>
+    <%- include('../partials/footer'); %>
+</body>
+
+</html>

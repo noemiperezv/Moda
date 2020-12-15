@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+        footer {
+            margin-top: 30%;
+        }
+    </style>
+</head>
+
+<body class="Fondo4">
+    <%- include('../partials/navbar'); %>
+    <div class="container">
+        <% if (mensaje) { %>
+            <div class="alert alert-danger" role="alert">
+                <%- mensaje %>
+            </div>
+            <% } %>
+            <div class="card">
+                <div class="card-header">
+                    <h1 id="MiTitulo" class="text-center">Modificar Película</h1>
+                </div>
+                <div class="card-body">
+                    <form action="/peliculas/update" method="post">
+                        <div class="form-group">
+                            <label>Id:</label>
+                            <input type="text" class="form-control" name="Id_Pelicula" value="<%= Id_Pelicula %>"
+                                autocomplete="off" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Título:</label>
+                            <input type="text" class="form-control" name="Titulo" value="<%= Titulo %>" autocomplete="off" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Director:</label>
+                            <input type="text" class="form-control" name="Nombre_Director" value="<%= Nombre_Director %>"
+                                autocomplete="off" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Actor:</label>
+                            <input type="text" class="form-control" name="Nombre_Actor" value="<%= Nombre_Actor %>" autocomplete="off" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Año:</label>
+                            <input type="text" class="form-control" name="Año" value="<%= Año %>" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label>Categoria:</label>
+                            <input type="text" class="form-control" name="Categoria" value="<%= Categoria %>" autocomplete="off">
+                        </div>
+                        <div class="form-group text-center">
+                            <input type="submit" class="btn btn-info" value="Modificar" />
+                            <a class="btn btn-info edit" href="/peliculas">Cancelar</i></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </div>
+
+    <%- include('../partials/script'); %>
+    <%- include('../partials/footer'); %>
+</body>
+
+</html>

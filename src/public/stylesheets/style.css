@@ -1,24 +1,8 @@
-body {
-  /*background: darkgrey;*/
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  margin:20px;
-  background: url("../images/bg.jpg");
-  
-
-}
-/*h2 :first-letter{ 
-  color:red;
-  
-}
-h1{
-  color: ghostwhite;
-  border-color: hotpink;
-  border: solid, 3px;
-}
-h2{
-  color: black;
-}*/
+/*
+Nombre del autor: Noemí Pérez Vega
+Objetivo de archivo: Proporcionar estilos acada uno de los componentes del proyecto
+Fecha y hora: domingo, ‎4‎ de ‎octubre‎ de ‎2020, ‏‎10:54:35 p. m.
+*/
 a {
   color: #00B7FF;
 }
@@ -36,14 +20,16 @@ a {
   border: 0;
   border-radius: 0;
   margin-bottom: 0;
-  font-size: 12px;
-  letter-spacing: 5px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-family: 'Merienda One', cursive;
+  color: lightpink !important;
 }
 .navbar-nav li a:hover {
-    color: #1abc9c !important;
+    color:lightpink !important;
 }
 .active>a {
-    color: #1abc9c !important;
+    color: lightpink !important;
     ;
 }
 .yo{
@@ -54,11 +40,15 @@ a {
   margin-bottom: 50px;
 }
 footer{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  font-size: 20px;
+  letter-spacing: 2px;
+  padding-bottom: 10px;
   padding-top: 20px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
   background-color: black;
   color: white;
   text-align: center;
@@ -70,6 +60,109 @@ footer{
   align-self:center;
 }
 p{
-  font: oblique bold 120% cursive;
+  font-family: 'Philosopher', sans-serif;
   font-size: 22px;
+}
+.col-sm-4{
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+#post{
+  margin-top: 50px;
+  margin-bottom: 50px;;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.mydiv {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  font-weight: bold;
+  background: linear-gradient(150deg, #fff102,  #f10271, #00c298);
+  background-size: 400% 300%;
+  animation: BgGradient 5s ease infinite;
+}
+
+@keyframes BgGradient {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+li.nav-item{
+  padding-right:20px;
+  padding-left: 20px;
+}
+li.right{
+  padding-right: 0px;
+  margin-right: 0;
+  align-items: right;
+}
+#map {
+  height: 100%;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#MiTitulo{
+  font-family: 'Lobster', cursive;
+}
+.Fondo{
+  background-color: lightpink;
+}
+.Fondo2{
+  background-color: powderblue;
+}
+.Fondo3{
+  background-color: tomato;
+}
+.Fondo4{
+  background-color: violet;
+}
+.Fondo5{
+  background-color: turquoise;
+  margin: 0%;
+  padding-bottom: 0%;
+}
+#textos{
+  font-family: 'Philosopher', sans-serif;
+}
+.Barra {
+  background-color:black;
+}
+#boton{
+  color: pink;
+}
+#edit{
+  color: #2ab80d;
+}
+#delete{
+  color: red;
+}
+#dif{
+  font-family: 'Fredoka One', cursive;
+  font-size: 16px;
+  color: salmon;
+}
+#tit{
+  font-family: 'Satisfy', cursive;
+  font-size: 36px;
+  background-color: dodgerblue;
+  text-align: center;
+}
+#tablaDirectores{
+  background-color: gold;
+}
+.container{
+  padding-top: 30px;
 }
