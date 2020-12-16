@@ -2,64 +2,68 @@
 <html lang="es">
 
 <head>
-  <%- include('../partials/head'); %>
-  <link rel="stylesheet" href="../stylesheets/style.css">
-  <style>
-    footer {
-      margin-top: 30%;
-    }
-  </style>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <style>
+        footer {
+            margin-top: 30%;
+        }
+    </style>
 </head>
 
 <body class="Fondo">
     <%- include('../partials/navbar'); %>
     <div class="container">
-    <% if (mensaje) {%>
+        <% if (mensaje) {%>
         <div class="alert alert-danger" role="alert">
             <% mensaje %>
         </div>
-    <% } %>
-  <div class="card">
-      <div class="card-header">
-          <h1 id="MiTitulo" class="text-center">Agregar Actor</h1>
-      </div>
-      <div class="card-body">
-          <form action="/actores/add" method="post">
-        <div class="form-group">
-            <label> Id: </label>
-            <input type="text" class="form-control" name="Id_Actor" value="<%= Id_Actor%>" autocomplete="off"/>
+        <% } %>
+        <div class="card">
+            <div class="card-header">
+                <h1 id="MiTitulo" class="text-center">Agregar Actor</h1>
+            </div>
+            <div class="card-body">
+                <form action="/actores/add" method="post">
+                    <div class="form-group">
+                        <label> Id: </label>
+                        <input type="text" class="form-control" name="Id_Actor" value="<%= Id_Actor%>"
+                            autocomplete="off" />
+                    </div>
+                    <div class="form-group">
+                        <label> Nombre: </label>
+                        <input type="text" class="form-control" name="Nombre" value="<%= Nombre%>" autocomplete="off" />
+                    </div>
+                    <div class="form-group">
+                        <label> Apellidos: </label>
+                        <input type="text" class="form-control" name="Apellidos" value="<%= Apellidos%>"
+                            autocomplete="off" />
+                    </div>
+                    <div class="form-group">
+                        <label> Edad: </label>
+                        <input type="text" class="form-control" name="Edad" value="<%= Edad%>" autocomplete="off" />
+                    </div>
+                    <div class="form-group">
+                        <label> Nacionalidad: </label>
+                        <input type="text" class="form-control" name="Nacionalidad" value="<%= Nacionalidad%>"
+                            autocomplete="off" />
+                    </div>
+                    <div class="form-group">
+                        <label> Año de Inicio: </label>
+                        <input type="text" class="form-control" name="AñoInicio" value="<%= AñoInicio%>"
+                            autocomplete="off" />
+                    </div>
+                    <div class="form-group text-center">
+                        <input type="submit" class="btn btn-info" value="Agregar" />
+                        <a class="btn btn-info edit" href="/actores">Cancelar</i></a>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="form-group">
-            <label> Nombre: </label>
-            <input type="text" class="form-control" name="Nombre" value="<%= Nombre%>" autocomplete="off"/>
-        </div>
-        <div class="form-group">
-            <label> Apellidos: </label>
-            <input type="text" class="form-control" name="Apellidos" value="<%= Apellidos%>" autocomplete="off"/>
-        </div>
-        <div class="form-group">
-            <label> Edad: </label>
-            <input type="text" class="form-control" name="Edad" value="<%= Edad%>" autocomplete="off"/>
-        </div>
-        <div class="form-group">
-            <label> Nacionalidad: </label>
-            <input type="text" class="form-control" name="Nacionalidad" value="<%= Nacionalidad%>" autocomplete="off"/>
-        </div>
-        <div class="form-group">
-            <label> Año de Inicio: </label>
-            <input type="text" class="form-control" name="AñoInicio" value="<%= AñoInicio%>" autocomplete="off"/>
-        </div>
-        <div class="form-group text-center">
-            <input type="submit" class="btn btn-info" value="Agregar" />
-            <a class="btn btn-info edit" href="/actores">Cancelar</i></a>
-        </div>
-    </form>
-      </div>
-  </div>
     </div>
 
-  <%- include('../partials/script'); %>
-  <%- include('../partials/footer'); %>
+    <%- include('../partials/script'); %>
+    <%- include('../partials/footer'); %>
 </body>
 
 </html>
